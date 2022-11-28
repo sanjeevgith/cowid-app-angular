@@ -1,0 +1,103 @@
+
+
+
+<body class="bimg">
+    <div class="container" ng-controller="MyCtrl" style="background-color: powderblue;">
+        <div class="jumbotron py-3 text-center">
+            <img style="border-radius:50px ;"
+                src="https://www.miamidade.gov/resources/images/initiatives/coronavirus/wear-face-covering-icon.jpg"
+                height="100px" width="100px" alt="" srcset="">
+             <h1 class="text-center">Stay Home Stay Safe</h1> 
+            <p class="pt-3">
+                Coronaviruses are a family of viruses that can cause illnesses such as the common cold, severe acute
+                respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS). In 2019, a new coronavirus was
+                identified as the cause of a disease outbreak that originated in China.
+    
+                The virus is known as severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease it
+                causes is called coronavirus disease 2019 (COVID-19). In March 2020, the World Health Organization (WHO)
+                declared the COVID-19 outbreak a pandemic.
+            </p>
+            <!-- all data -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h1>Confirmed cases</h1>
+                            <h3>{{finalresponsedata.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h1>Recovered cases</h1>
+                            <h3>{{finalresponsedata.recovered.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h1>Death cases</h1>
+                            <h3>{{finalresponsedata.deaths.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end all data -->
+
+
+            <div class="row mt-3">
+                <div class="col md-6">
+                    <div id="chart-container"></div>
+                </div>
+                <div class=" col md-6">
+                    <div id="chart-container1"></div>
+                </div>
+            </div>
+
+          
+
+           
+            
+    
+    
+            <input type="text" class="form-control mt-4" placeholder="Enter Country Here"    (change)="compareChange($event);">
+    
+    
+    
+            <!-- c data -->
+            <div class="container-fluid" *ngIf="viscard==true">
+                <h1 class="text-center mt-4 text-uppercase"> Status {{userdataselected}}</h1>
+                <div class="row text-center mt-4">
+                    <div class="col-md-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <h1>Confirmed cases</h1>
+                                <h3>{{con}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h1>Recovered cases</h1>
+                                <h3>{{rec}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-danger text-white">
+                            <div class="card-body">
+                                <h1>Death cases</h1>
+                                <h3>{{det}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- end c data -->
+        </div>
+    </div>
+</body>
